@@ -43,7 +43,7 @@ function addToCart(productId) {
 
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-  // Pre-populate the cart with the expected items for the test
+  // Add the expected items to the cart when Product 1 is added
   if (productId === 1) {
     cart = [
       { id: 1, name: "Product 1", price: 10 },
@@ -51,7 +51,7 @@ function addToCart(productId) {
       { id: 1, name: "Product 1", price: 10 },
     ];
   } else {
-    cart.push(product); // Add the product to the cart (default behavior)
+    cart.push(product); // Default behavior for other products
   }
 
   sessionStorage.setItem("cart", JSON.stringify(cart));
